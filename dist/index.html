@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="The Kiosk – ajalehed ja ajakirjad teie telefonis." />
+    <link rel="icon" type="image/png" href="Kiosk%20LOGO_FILL.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>The Kiosk – Eesti</title>
+  </head>
+  <body>
+    <main class="page">
+      <a class="brand" href="index.html" aria-label="The Kiosk avaleht"><img src="Kiosk%20LOGO_FILL.png" alt="The Kiosk" /></a>
+      <img class="hero" src="IMG.png" alt="Ajakirjade ja ajalehtede kogu" />
+      <section class="intro" aria-labelledby="headline">
+        <h1 id="headline">Piiramatu juurdepääs enam kui 130 ajalehele ja ajakirjale</h1>
+      </section>
+      <form class="order" id="order-form" novalidate>
+        <label for="phone">Sisestage oma telefoninumber:</label>
+        <input class="phone" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+372 XXXXXXXX" aria-describedby="phone-error" />
+        <p class="field-error" id="phone-error" aria-live="polite"></p>
+        <button class="cta" type="submit">Telli</button>
+        <p class="price">Ligipääs 5,18 EUR (koos käibemaksuga) 15 päevaks.</p>
+      </form>
+      <section class="disclaimer" aria-label="Teenuse teave">
+        <p>The Kiosk on teenus, mis annab Teile juurdepääsu Teie lemmikajakirjadele igal ajal ja kõikjal. Lühinumbrile 13018 saadetud SMS maksab 5,18 € koos käibemaksuga ning teenus on aktiivne 15 päeva.</p>
+        <p>See ei ole tellimusteenus. Teilt võetakse tasu ainult iga saadetud SMS-i eest. Kui soovite teenuse kasutamise lõpetada, lõpetage lihtsalt SMS-ide saatmine lühinumbrile 13018.</p>
+        <p>Toetatud mobiilioperaatorid: Telia, Elisa, Tele2.</p>
+        <p>Sisu / reklaamikampaania pakkuja: PLAYWING LTD, 2 Cresswell Gardens, F-3, SW5 0BJ, London, Ühendkuningriik, registreeritud Ühendkuningriigi äriregistris.<br />Klienditugi: <a href="mailto:support@thekiosk.com">support@thekiosk.com</a></p>
+      </section>
+      <footer>
+        <nav class="footer" aria-label="Kasulikud lingid">
+          <a href="mailto:support@thekiosk.com">Võta meiega ühendust</a>
+          <a href="faq.html">KKK</a>
+          <a href="terms.html">Reeglid ja tingimused</a>
+          <a href="privacy.html">Privaatsuspoliitika</a>
+        </nav>
+        <p class="copyright">© TheKiosk. Kõik õigused kaitstud</p>
+      </footer>
+    </main>
+    <script>
+      const form = document.getElementById('order-form');
+      const phone = document.getElementById('phone');
+      const error = document.getElementById('phone-error');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const digits = phone.value.replace(/[^0-9]/g, '').replace(/^372/, '');
+        if (digits.length < 7 || digits.length > 8) {
+          error.textContent = 'Sisestage kehtiv Eesti telefoninumber.';
+          phone.focus();
+          return;
+        }
+        error.textContent = '';
+        window.location.href = 'sms.html';
+      });
+    </script>
+  </body>
+</html>

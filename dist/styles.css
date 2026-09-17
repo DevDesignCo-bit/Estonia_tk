@@ -1,0 +1,61 @@
+:root {
+  --brand: #32bf8c;
+  --brand-dark: #169f70;
+  --ink: #535353;
+  --muted: #767676;
+  --blue: #4871ad;
+  --line: #cbcbcb;
+  --wash: #f4f5f5;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #eceeee; }
+body { min-height: 100%; margin: 0; color: var(--ink); background: #eceeee; font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; }
+.page { width: min(100%, 520px); min-height: 100svh; margin: 0 auto; padding: 12px 18px 28px; background: #fff; }
+.brand { display: inline-flex; width: 22px; height: 22px; }
+.brand img { width: 100%; height: 100%; object-fit: contain; }
+.hero { display: block; width: min(100%, 315px); margin: 47px auto 28px; }
+.intro { max-width: 355px; margin: 0 auto; text-align: center; }
+.intro h1 { margin: 0; color: var(--blue); font-size: 16px; font-weight: 500; line-height: 1.24; }
+.order { max-width: 390px; margin: 49px auto 0; }
+.order label { display: block; margin-bottom: 17px; color: #505050; font-size: 14px; font-weight: 700; }
+.phone { width: 100%; height: 59px; padding: 0 18px; border: 1px solid var(--line); border-radius: 21px; outline: 0; color: #555; font: inherit; font-size: 16px; text-align: center; letter-spacing: .02em; }
+.phone::placeholder { color: #b4b4b4; }
+.phone:focus { border-color: var(--brand-dark); box-shadow: 0 0 0 3px rgb(50 191 140 / .16); }
+.field-error { min-height: 17px; margin: 7px 0 -7px; color: #bd2b2b; font-size: 11px; text-align: left; }
+.cta { width: 100%; min-height: 57px; margin-top: 10px; border: 0; border-radius: 18px; color: #fff; background: var(--brand); cursor: pointer; font: inherit; font-size: 16px; font-weight: 700; transition: background .16s ease, transform .16s ease; }
+.cta:hover { background: var(--brand-dark); }
+.cta:focus-visible { outline: 3px solid rgb(50 191 140 / .36); outline-offset: 3px; }
+.cta:active { transform: translateY(1px); }
+.price { margin: 11px 0 0; color: #777; font-size: 11px; line-height: 1.35; text-align: center; }
+.disclaimer { max-width: 460px; margin: 64px auto 0; color: #7a7a7a; font-size: 10px; line-height: 1.23; text-align: center; }
+.disclaimer p { margin: 0 0 12px; }
+.footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 13px 27px; margin-top: 44px; }
+.footer a { color: #707070; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+.footer a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+.copyright { margin: 25px 0 0; color: #bbb; font-size: 10px; text-align: center; }
+
+.sms-page { display: grid; align-content: start; min-height: 100svh; padding-top: 16px; }
+.sms-top { display: flex; align-items: center; justify-content: space-between; padding: 0 3px 17px; color: #171717; font-weight: 700; }
+.sms-status { display: flex; gap: 6px; align-items: center; font-size: 16px; }
+.sms-icons { color: #373737; font-size: 14px; letter-spacing: 2px; }
+.sms-app { padding: 25px 0 26px; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; text-align: center; }
+.sms-app img { display: block; width: 42px; height: 42px; margin: 0 auto 13px; }
+.sms-app strong { display: block; color: #555; font-size: 15px; }
+.sms-time { margin: 38px 0 12px; color: #999; font-size: 11px; text-align: center; }
+.bubble { max-width: 284px; margin: 0 0 0 auto; padding: 14px 15px; border-radius: 18px 18px 4px 18px; color: #3d3d3d; background: #ebebed; font-size: 14px; line-height: 1.35; text-align: left; }
+.bubble a { color: #2c669c; word-break: break-word; }
+.sms-note { margin: 24px auto 0; max-width: 320px; color: var(--muted); font-size: 12px; line-height: 1.45; text-align: center; }
+.back-link { display: inline-flex; justify-content: center; margin: 22px auto 0; color: var(--blue); font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (min-width: 521px) {
+  .page { box-shadow: 0 0 28px rgb(36 56 64 / .08); }
+}
+@media (max-width: 390px) {
+  .page { padding-right: 17px; padding-left: 17px; }
+  .hero { width: min(100%, 278px); margin-top: 42px; margin-bottom: 24px; }
+  .intro h1 { font-size: 15px; }
+  .order { margin-top: 46px; }
+  .footer { gap: 12px 20px; }
+}
